@@ -50,15 +50,15 @@ nav h1 {
 nav h1:hover {
   color: aqua;
 }
-.new-tweet {
+.nav-new-tweet {
   font-size: 24;
   font-family: 'Source Sans Pro', sans-serif;
   margin: 2.5em 1.5rem 0 0;
 }
-.new-tweet span {
+.nav-new-tweet span {
   font-weight: 600;
 }
-.new-tweet span:hover {
+.nav-new-tweet span:hover {
   color: aqua;
 }
 i {
@@ -75,12 +75,7 @@ main {
   flex-direction: column;
   align-self: center;
   width: 90%;
-  background-color: #54514930;
-  border-radius: 1rem;
   padding: 0 .5rem 0 .5rem;
-}
-main:hover {
-  background-color: #54514921;
 }
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 /*

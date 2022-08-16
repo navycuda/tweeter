@@ -10,9 +10,11 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -27,7 +29,7 @@
       <div class="title">
         <h1>tweeter</h1>
       </div>
-      <div class="new-tweet">
+      <div class="nav-new-tweet">
         <div>
           <span>Write</span> a new tweet
         </div>
@@ -49,16 +51,21 @@
     <!-- Page-specific (main) content here -->
     <main>
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form>
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+        <form method="post" action="/tweets/">
+          <!-- <label for="tweet-text">What are you humming about?</label> -->
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <hr/>
           <div>
-            <button type="submit">Tweet</button>
+            <button type="submit" >Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
     </main>
+
+    <!-- <div id="special_div">
+      <p>This paragraph</p>
+      <p>Second Paragraph</p>
+    </div> -->
   </body>
 </html>
