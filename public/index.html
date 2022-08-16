@@ -48,9 +48,17 @@
 
     <!-- Page-specific (main) content here -->
     <main>
-      <h2>What's on your mind?</h2>
-      <p>No no, tell me what's on your mind!</p>
-
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
