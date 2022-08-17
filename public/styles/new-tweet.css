@@ -35,3 +35,6 @@
   display: flex;
   justify-content: space-between;
 }
+.counter {
+  font-weight: 600;
+}

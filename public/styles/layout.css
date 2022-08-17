@@ -61,7 +61,7 @@ nav h1:hover {
 .nav-new-tweet span:hover {
   color: aqua;
 }
-i {
+.nav-new-tweet i {
   color: red;
   margin-left: 45%;
 }
