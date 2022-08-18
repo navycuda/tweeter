@@ -16,16 +16,18 @@ article header {
 }
 article section {
   border-bottom: 2px solid #545149;
+  padding: 0 0.5rem 0 0.5rem;
 }
 article footer {
   display: flex;
   flex-direction: row;
-}
-object {
-  height: 1rem;
-  fill:blue;
+  justify-content: space-between;
+  padding: 0.5rem 0.5rem 0 0.5rem;
 }
 svg {
   height: 1rem;
-  fill: beige
+  fill: #4056A1;
+}
+svg:hover {
+  fill: #677ab6;
 }
