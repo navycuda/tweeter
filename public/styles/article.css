@@ -6,6 +6,9 @@ article {
   border-radius: 0.75rem;
   padding: 0.25rem 0.25rem 0.25rem 0.25rem;
 }
+article:hover {
+  box-shadow: 3px 3px #545149;
+}
 article header {
   display: flex;
   flex-direction: row;
