@@ -39,6 +39,8 @@ main {
   align-self: center;
   width: 90%;
   padding: 0 .5rem 0 .5rem;
+  background-color: rgba(255, 255, 255, 0.438);
+  border-radius: 1rem;
 }
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 /*

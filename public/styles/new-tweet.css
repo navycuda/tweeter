@@ -1,6 +1,4 @@
 .new-tweet {
-  background-color: rgba(255, 255, 255, 0.438);
-  border-radius: 1rem;
   padding: 1rem 1rem 1rem 1rem;
 }
 .new-tweet button {
