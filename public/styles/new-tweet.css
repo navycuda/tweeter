@@ -38,3 +38,6 @@
 .counter {
   font-weight: 600;
 }
+.counter.red {
+  color: red;
+}
