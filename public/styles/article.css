@@ -26,6 +26,9 @@ article header div {
   align-self: start;
   align-items: center;
 }
+article header > span {
+  color: #5451494A;
+}
 article section {
   border-bottom: 2px solid #545149;
   padding: 0 0.5rem 0 0.5rem;
