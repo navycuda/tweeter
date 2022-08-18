@@ -21,3 +21,11 @@ article footer {
   display: flex;
   flex-direction: row;
 }
+object {
+  height: 1rem;
+  fill:blue;
+}
+svg {
+  height: 1rem;
+  fill: beige
+}
