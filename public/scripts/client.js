@@ -31,8 +31,11 @@ const data = {
 };
 
 
-const renderTweets = (tweets) => {
-
+const renderTweets = (tweets, element) => {
+  
+  for (const tweet of Object.values(tweets)) {
+    element.append(createTweetElement(tweet));
+  }
 };
 
 const createTweetElement = (tweet) => {
@@ -78,7 +81,7 @@ $(() => {
   $outputTweet.appendTo($tweetBox);
 
 
-
+  renderTweets(data, $tweetBox);
 
 
 
