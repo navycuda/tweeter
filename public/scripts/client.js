@@ -6,6 +6,13 @@ $(() => {
   */
   let tweetsOnHand = 0;
   const _maxTweetLengthDoNotChange = 140;
+  const $validation = $('#validation');
+
+  $validation.slideUp(0);
+
+
+
+
   const validationError = (message, visible) => {
     const $validation = $('<span>');
     $validation.addClass('validation');
@@ -13,6 +20,10 @@ $(() => {
 
 
   };
+
+
+
+
   const renderTweets = (tweets, element) => {
     if (tweets instanceof Array) {
       for (const tweet of tweets) {
@@ -89,15 +100,18 @@ $(() => {
 
   loadTweets($fromServer);
 
+  $tweetText.focus(() => {
+    $validation.slideUp(250);
+  });
 
   $('#post-new-tweet').on('click', function(event) {
     event.preventDefault();
     if (!$tweetText.val()) {
-      alert('not good bro, not good.');
-      $tweetText.focus();
+      $validation.val('No content').slideDown(250);
       return;
     } else if ($tweetText.val().length > _maxTweetLengthDoNotChange) {
-
+      $validation.val('Too long').slideDown(250);
+      return;
     }
     const $form = $tweetBox.find('form');
     $.ajax({
