@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const _maxTweetLengthDoNotChange = 140;
 const renderTweets = (tweets, element) => {
   if (tweets instanceof Array) {
     for (const tweet of tweets) {
@@ -69,6 +70,12 @@ $(() => {
   const $tweetText = $('#tweet-text');
   $('#post-new-tweet').on('click', function(event) {
     event.preventDefault();
+    if (!$tweetText.val() || $tweetText.val().length > _maxTweetLengthDoNotChange) {
+      alert('not good bro, not good.');
+      return;
+    }
+
+
     const $form = $tweetBox.find('form');
     $.ajax({
       url: 'http://localhost:8080/tweets',
