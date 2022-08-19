@@ -7,6 +7,10 @@ $(() => {
   let tweetsOnHand = 0;
   const _maxTweetLengthDoNotChange = 140;
   const validationError = (message, visible) => {
+    const $validation = $('<span>');
+    $validation.addClass('validation');
+
+
 
   };
   const renderTweets = (tweets, element) => {
