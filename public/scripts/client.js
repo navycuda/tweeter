@@ -85,6 +85,7 @@ const createTweetElement = (tweet) => {
 $(() => {
   console.log('Good job bro!');
   const $tweetBox = $('main');
+  const $tweetText = $('#tweet-text');
   // const $outputTweet = createTweetElement(newtonTweet);
 
   // console.log($tweetBox);
@@ -95,11 +96,15 @@ $(() => {
 
   renderTweets(data, $tweetBox);
 
-  $('#post-new-tweet').on('click', (event) => {
+  $('#post-new-tweet').on('click', function(event) {
     event.preventDefault();
-    console.log('the submit, did we prevent it?');
+    console.log($tweetText.val());
+    const $form = $('form #new-tweet');
 
-    console.log($(this).serialize;)
+    console.log($form.serialize());
+
+    $tweetText.val('');
+    $tweetText.focus();
 
   });
 
