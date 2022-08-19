@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+let tweetsOnHand = 0;
 const _maxTweetLengthDoNotChange = 140;
 const renderTweets = (tweets, element) => {
   if (tweets instanceof Array) {
@@ -20,8 +21,12 @@ const loadTweets = (element) => {
     url: 'http://localhost:8080/tweets',
     method: 'GET',
   }).then((data) => {
+
+    data = data.sort((a , b) => a.created_at > b.created_at);
+    data = data.slice(tweetsOnHand);
     renderTweets(data, element);
   });
+  tweetsOnHand = element.length;
 };
 const createTweetElement = (tweet) => {
   const $article = $('<article>');
@@ -66,14 +71,18 @@ const createTweetElement = (tweet) => {
 
 // Execution
 $(() => {
-  const $tweetBox = $('main');
+  const $tweetBox = $('#tweet-box');
+  const $fromServer = $tweetBox.find('#from-server');
   const $tweetText = $('#tweet-text');
+
+  loadTweets($fromServer);
+
+
   $('#post-new-tweet').on('click', function(event) {
     event.preventDefault();
     if (!$tweetText.val() || $tweetText.val().length > _maxTweetLengthDoNotChange) {
       alert('not good bro, not good.');
       $tweetText.focus();
-
       return;
     }
     const $form = $tweetBox.find('form');
@@ -81,10 +90,12 @@ $(() => {
       url: 'http://localhost:8080/tweets',
       method: 'POST',
       data: $form.serialize()
-    });
+    })
+      .then(function() {
+        console.log('load tweets');
+        loadTweets($fromServer);
+      });
     $tweetText.val('');
     $tweetText.focus();
   });
-  
-  loadTweets($tweetBox);
 });
