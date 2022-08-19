@@ -7,22 +7,11 @@ $(() => {
   let tweetsOnHand = 0;
   const _maxTweetLengthDoNotChange = 140;
   const $validation = $('#validation');
-
+  const $tweetBox = $('#tweet-box');
+  const $fromServer = $tweetBox.find('#from-server');
+  const $tweetText = $('#tweet-text');
   $validation.slideUp(0);
-
-
-
-
-  const validationError = (message, visible) => {
-    const $validation = $('<span>');
-    $validation.addClass('validation');
-
-
-
-  };
-
-
-
+  loadTweets($fromServer);
 
   const renderTweets = (tweets, element) => {
     if (tweets instanceof Array) {
@@ -91,14 +80,6 @@ $(() => {
 
     return $article;
   };
-
-  // Execution
-
-  const $tweetBox = $('#tweet-box');
-  const $fromServer = $tweetBox.find('#from-server');
-  const $tweetText = $('#tweet-text');
-
-  loadTweets($fromServer);
 
   $tweetText.focus(() => {
     $validation.slideUp(250);
