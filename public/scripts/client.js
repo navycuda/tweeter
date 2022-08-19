@@ -99,7 +99,7 @@ $(() => {
     event.preventDefault();
     console.log('the submit, did we prevent it?');
 
-
+    console.log($(this).serialize;)
 
   });
 
