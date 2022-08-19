@@ -8,13 +8,18 @@ const _maxTweetLengthDoNotChange = 140;
 const renderTweets = (tweets, element) => {
   if (tweets instanceof Array) {
     for (const tweet of tweets) {
-      element.append(createTweetElement(tweet));
+      element.prepend(createTweetElement(tweet));
     }
   } else {
     for (const tweet of Object.values(tweets)) {
-      element.append(createTweetElement(tweet));
+      element.prepend(createTweetElement(tweet));
     }
   }
+};
+const escapeText = (str) => {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
 const loadTweets = (element) => {
   $.ajax({
@@ -23,22 +28,22 @@ const loadTweets = (element) => {
   }).then((data) => {
 
     data = data.sort((a , b) => a.created_at > b.created_at);
-    data = data.slice(tweetsOnHand);
-    renderTweets(data, element);
+    const output = data.slice(tweetsOnHand);
+    renderTweets(output, element);
+    tweetsOnHand = data.length;
   });
-  tweetsOnHand = element.length;
 };
 const createTweetElement = (tweet) => {
   const $article = $('<article>');
   // Header
   const $header = $('<header>');
   const $headerDiv = $('<div>');
-  const $avatar = $(`<img src="${tweet.user.avatars}">`);
-  const $name = $('<span>').text(tweet.user.name);
-  const $handle = $('<span>').text(tweet.user.handle);
+  const $avatar = $(`<img src="${escapeText(tweet.user.avatars)}">`);
+  const $name = $('<span>').text(escapeText(tweet.user.name));
+  const $handle = $('<span>').text(escapeText(tweet.user.handle));
   // Section
   const $section = $('<section>');
-  const $sectionText = $(`<p>${tweet.content.text}</p>`);
+  const $sectionText = $(`<p>${escapeText(tweet.content.text)}</p>`);
   // footer
   const $footer = $('<footer>');
   const $dateStamp = $('<span>').text(timeago.format(tweet.created_at));
