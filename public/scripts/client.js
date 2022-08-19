@@ -95,7 +95,7 @@ $(() => {
 
   renderTweets(data, $tweetBox);
 
-  $('#post-new-tweet').on('submit', (event) => {
+  $('#post-new-tweet').on('click', (event) => {
     event.preventDefault();
     console.log('the submit, did we prevent it?');
 
