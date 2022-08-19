@@ -4,12 +4,24 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 const renderTweets = (tweets, element) => {
-  
-  for (const tweet of Object.values(tweets)) {
-    element.append(createTweetElement(tweet));
+  if (tweets instanceof Array) {
+    for (const tweet of tweets) {
+      element.append(createTweetElement(tweet));
+    }
+  } else {
+    for (const tweet of Object.values(tweets)) {
+      element.append(createTweetElement(tweet));
+    }
   }
 };
-
+const loadTweets = (element) => {
+  $.ajax({
+    url: 'http://localhost:8080/tweets',
+    method: 'GET',
+  }).then((data) => {
+    renderTweets(data, element);
+  });
+};
 const createTweetElement = (tweet) => {
   const $article = $('<article>');
   // Header
@@ -51,49 +63,21 @@ const createTweetElement = (tweet) => {
   return $article;
 };
 
-
-
 // Execution
 $(() => {
-  console.log('Good job bro!');
   const $tweetBox = $('main');
   const $tweetText = $('#tweet-text');
-
-  const loadTweets = () => {
-    $.ajax({
-      url: 'http://localhost:8080/tweets',
-      method: 'GET',
-    }).then((data) => {
-      console.log(data);
-    });
-  };
-
   $('#post-new-tweet').on('click', function(event) {
     event.preventDefault();
-    console.log($tweetText.val());
     const $form = $tweetBox.find('form');
-    
-    console.log($form.serialize());
-    
-    
-    
     $.ajax({
       url: 'http://localhost:8080/tweets',
       method: 'POST',
       data: $form.serialize()
     });
-    
     $tweetText.val('');
     $tweetText.focus();
-
-
   });
-
-
-
-
-
-  loadTweets();
-
-
+  
+  loadTweets($tweetBox);
 });
