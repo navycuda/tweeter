@@ -11,7 +11,6 @@ $(() => {
   const $fromServer = $tweetBox.find('#from-server');
   const $tweetText = $('#tweet-text');
   $validation.slideUp(0);
-  loadTweets($fromServer);
 
   const renderTweets = (tweets, element) => {
     if (tweets instanceof Array) {
@@ -80,6 +79,8 @@ $(() => {
 
     return $article;
   };
+
+  loadTweets($fromServer);
 
   $tweetText.focus(() => {
     $validation.slideUp(250);
