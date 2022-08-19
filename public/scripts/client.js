@@ -99,7 +99,7 @@ $(() => {
   $('#post-new-tweet').on('click', function(event) {
     event.preventDefault();
     console.log($tweetText.val());
-    const $form = $('form #new-tweet');
+    const $form = $tweetBox.find('form');
 
     console.log($form.serialize());
 
