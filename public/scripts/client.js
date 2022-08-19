@@ -1,17 +1,19 @@
 $(() => {
-  /*
-  * Client-side JS logic goes here
-  * jQuery is already loaded
-  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
-  */
+  // Maintains count of tweets so client does not duplicate tweets
   let tweetsOnHand = 0;
   const _maxTweetLengthDoNotChange = 140;
   const $validation = $('#validation');
   const $tweetBox = $('#tweet-box');
   const $fromServer = $tweetBox.find('#from-server');
   const $tweetText = $('#tweet-text');
+  // Make sure the waring validation is out of the way at page load
   $validation.slideUp(0);
 
+  /**
+   * Renders the supplied tweets to the dom
+   * @param {Array} tweets Can accept object or array
+   * @param {Object} element Dom element to attach tweet to
+   */
   const renderTweets = (tweets, element) => {
     if (tweets instanceof Array) {
       for (const tweet of tweets) {
@@ -23,11 +25,20 @@ $(() => {
       }
     }
   };
+  /**
+   * Eliminates harmful strings, shamelessly stolen from lesson example
+   * @param {String} str the string to escape 
+   * @returns {String} the escaped string
+   */
   const escapeText = (str) => {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+  /**
+   * Makes the server call to load the tweets
+   * @param {Object} element Dom object to attach tweets to
+   */
   const loadTweets = (element) => {
     $.ajax({
       url: 'http://localhost:8080/tweets',
@@ -39,6 +50,11 @@ $(() => {
       tweetsOnHand = data.length;
     });
   };
+  /**
+   * Somewhat messy way to make the tweet element
+   * @param {Object} tweet the raw tweet data object
+   * @returns {Object} Dom element
+   */
   const createTweetElement = (tweet) => {
     const $article = $('<article>');
     // Header
@@ -79,13 +95,13 @@ $(() => {
 
     return $article;
   };
-
+  // On pageload, grab all the tweets from the server
   loadTweets($fromServer);
-
+  // If error message displayed, focusing on the text box will eliminate it
   $tweetText.focus(() => {
     $validation.slideUp(250);
   });
-
+  // Post new tweet
   $('#post-new-tweet').on('click', function(event) {
     event.preventDefault();
     if (!$tweetText.val()) {
