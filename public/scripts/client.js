@@ -93,6 +93,10 @@ $(() => {
 
   // $outputTweet.appendTo($tweetBox);
 
+  const loadTweets = () => {
+
+  };
+
 
   renderTweets(data, $tweetBox);
 
