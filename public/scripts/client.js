@@ -92,15 +92,24 @@ const createTweetElement = (tweet) => {
 $(() => {
   console.log('Good job bro!');
   const $tweetBox = $('main');
-  const $outputTweet = createTweetElement(newtonTweet);
+  // const $outputTweet = createTweetElement(newtonTweet);
 
-  console.log($tweetBox);
-  console.log($outputTweet);
+  // console.log($tweetBox);
+  // console.log($outputTweet);
 
-  $outputTweet.appendTo($tweetBox);
+  // $outputTweet.appendTo($tweetBox);
 
 
   renderTweets(data, $tweetBox);
+
+  $('#post-new-tweet').on('submit', () => {
+    
+    
+
+
+
+  });
+
 
 
 
