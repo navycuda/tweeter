@@ -13,18 +13,14 @@ const updateCounter = (pos, counter) => {
 };
 
 $(() => {
-  const maxChars = 140;
-
-
-
+  const _maxTweetLengthDoNotChange = 140;
   const counter = $('output.counter');
   // counter.val(120);
 
   const tweetText = $('#tweet-text');
 
   tweetText.on('input', () => {
-    const pos = maxChars - tweetText.val().length;
+    const pos = _maxTweetLengthDoNotChange - tweetText.val().length;
     updateCounter(pos, counter);
   });
-
 });
