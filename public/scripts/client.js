@@ -59,29 +59,22 @@ const createTweetElement = (tweet) => {
 
   // Assemble the article
   $article
-    .append($header)
-    .append($section)
-    .append($footer);
+    .append($header, $section, $footer);
   // Assemble the header
   $header
-    .append($headerDiv)
-    .append($handle);
+    .append($headerDiv, $handle);
   // Assemble the header div
   $headerDiv
-    .append($avatar)
-    .append($name);
+    .append($avatar, $name);
   // Assemble the section
   $section
     .append($sectionText);
   // Assemble the footer
   $footer
-    .append($dateStamp)
-    .append($buttons);
+    .append($dateStamp, $buttons);
   // Assemble the buttons
   $buttons
-    .append($flag)
-    .append($repeat)
-    .append($heart);
+    .append($flag, $repeat, $heart);
 
   return $article;
 };
@@ -102,9 +95,9 @@ $(() => {
 
   renderTweets(data, $tweetBox);
 
-  $('#post-new-tweet').on('submit', () => {
-    
-    
+  $('#post-new-tweet').on('submit', (event) => {
+    event.preventDefault();
+    console.log('the submit, did we prevent it?');
 
 
 
