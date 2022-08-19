@@ -1,0 +1,10 @@
+#validation {
+  height: auto;
+  font-size: 1rem;
+  width: 50%;
+  background-color: red;
+  color: white;
+  align-self: center;
+  text-align: center;
+  border-radius: 1rem;
+}
