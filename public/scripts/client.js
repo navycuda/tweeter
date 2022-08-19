@@ -72,10 +72,10 @@ $(() => {
     event.preventDefault();
     if (!$tweetText.val() || $tweetText.val().length > _maxTweetLengthDoNotChange) {
       alert('not good bro, not good.');
+      $tweetText.focus();
+
       return;
     }
-
-
     const $form = $tweetBox.find('form');
     $.ajax({
       url: 'http://localhost:8080/tweets',
