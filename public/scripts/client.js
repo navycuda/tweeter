@@ -61,7 +61,10 @@ $(() => {
 
   const loadTweets = () => {
     $.ajax({
-      url: 'http://localhost:8080/tweets'
+      url: 'http://localhost:8080/tweets',
+      method: 'GET',
+    }).then((data) => {
+      console.log(data);
     });
   };
 
@@ -76,9 +79,8 @@ $(() => {
     
     $.ajax({
       url: 'http://localhost:8080/tweets',
-      type: 'GET',
-    }).then ((data) => {
-      console.log(data);
+      method: 'POST',
+      data: $form.serialize()
     });
     
     $tweetText.val('');
@@ -91,7 +93,7 @@ $(() => {
 
 
 
-
+  loadTweets();
 
 
 });
