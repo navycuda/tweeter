@@ -100,11 +100,20 @@ $(() => {
     event.preventDefault();
     console.log($tweetText.val());
     const $form = $tweetBox.find('form');
-
+    
     console.log($form.serialize());
-
+    
+    
+    
+    $.ajax({
+      url: 'http://localhost:8080/tweets',
+      type: 'POST',
+      data: $form.serialize()
+    });
+    
     $tweetText.val('');
     $tweetText.focus();
+
 
   });
 
