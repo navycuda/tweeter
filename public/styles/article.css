@@ -32,6 +32,7 @@ article header > span {
 article section {
   border-bottom: 2px solid #545149;
   padding: 0 0.5rem 0 0.5rem;
+  word-wrap: break-word;
 }
 article footer {
   display: flex;
