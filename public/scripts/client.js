@@ -58,19 +58,12 @@ $(() => {
   console.log('Good job bro!');
   const $tweetBox = $('main');
   const $tweetText = $('#tweet-text');
-  // const $outputTweet = createTweetElement(newtonTweet);
-
-  // console.log($tweetBox);
-  // console.log($outputTweet);
-
-  // $outputTweet.appendTo($tweetBox);
 
   const loadTweets = () => {
-
+    $.ajax({
+      url: 'http://localhost:8080/tweets'
+    });
   };
-
-
-  renderTweets(data, $tweetBox);
 
   $('#post-new-tweet').on('click', function(event) {
     event.preventDefault();
@@ -83,8 +76,9 @@ $(() => {
     
     $.ajax({
       url: 'http://localhost:8080/tweets',
-      type: 'POST',
-      data: $form.serialize()
+      type: 'GET',
+    }).then ((data) => {
+      console.log(data);
     });
     
     $tweetText.val('');
@@ -92,6 +86,9 @@ $(() => {
 
 
   });
+
+
+
 
 
 
