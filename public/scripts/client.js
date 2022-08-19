@@ -107,10 +107,10 @@ $(() => {
   $('#post-new-tweet').on('click', function(event) {
     event.preventDefault();
     if (!$tweetText.val()) {
-      $validation.val('No content').slideDown(250);
+      $validation.text('No content').slideDown(250);
       return;
     } else if ($tweetText.val().length > _maxTweetLengthDoNotChange) {
-      $validation.val('Too long').slideDown(250);
+      $validation.text('Too long').slideDown(250);
       return;
     }
     const $form = $tweetBox.find('form');
