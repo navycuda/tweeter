@@ -2,9 +2,8 @@ html {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   color: #545149;
+  background-color: #ababab;
   font-size: 24px;
-  background-color: #ffde80a3;
-  background-image: url(/images/backgrounds/shattered-dark.png);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +22,8 @@ main {
   width: 90%;
   padding: 0 .5rem 0 .5rem;
   background-color: rgba(255, 255, 255, 0.438);
-  border-radius: 1rem;
+  background-color: #ffde80a3;
+  background-image: url(/images/backgrounds/shattered-dark.png);
 }
 .hidden {
   display: none;
