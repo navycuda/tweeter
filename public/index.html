@@ -26,24 +26,31 @@
 
   <body>
 
-    <h1>Tweeter App</h1>
-
+    <h1 class="hidden">Tweeter App</h1>
+    
     <header>
+      <h2>tweeter</h2>
       <nav>
-        <h1>tweeter</h1>
-        <span>Write</span> a new tweet
-        <i class="fa-solid fa-angles-down"></i>
-        <i class="fa-solid fa-flag"></i>
-        <i class="fa-solid fa-repeat"></i>
-        <i class="fa-solid fa-heart"></i>
-      </section>
-    </nav>
-  </header>
+        <span>
+          <i>Write</i> a new tweet
+        </span>
+        <a href="#">
+          <i class="fa-solid fa-angles-down"></i>
+        </a>
+      </nav>
+    </header>
+
 
     <main>
+      <h2 class="hidden">What are you humming about?</h2>
+
+      <div>
 
 
-      
+
+      </div>
+
+
 
 
 
@@ -52,10 +59,8 @@
 
 
 
-
-
-
     <main id="tweet-box">
+      <h2>New Tweet</h2>
       <section class="new-tweet">
         <form method="post" action="/tweets/">
           <span id="validation"></span>
@@ -67,9 +72,10 @@
           </div>
         </form>
       </section>
-      <section id="from-server">
-
-      </section>
+      <article>
+        <h1>Tweets</h1>
+        
+      </article>
     </main>
 
   </body>
