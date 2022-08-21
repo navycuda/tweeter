@@ -9,9 +9,23 @@
   background-color: #4056A1;
   height: 120px;
   width: 100%;
+  padding: 0 1.5rem 0 1.5rem;
 }
 /* the title is a span to keep clutter out of the html outline */
 .nav > span {
   font-family: 'Bungee', sans-serif;
+  align-self: flex-end;
+  font-size: 48px;
+}
+/* "Write" a new tweet */
+.nav nav > span i {
+  font-style: normal;
+  font-weight: 600;
+}
+/* Navigation links */
+.nav nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   align-self: flex-end;
 }
