@@ -1,0 +1,16 @@
+/* baseline for navigation */
+.nav {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #ffffff;
+  background-color: #4056A1;
+  height: 120px;
+  width: 100%;
+}
+/* the title is a span to keep clutter out of the html outline */
+.nav > span {
+  font-family: 'Bungee', sans-serif;
+}
