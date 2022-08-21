@@ -13,4 +13,5 @@
 /* the title is a span to keep clutter out of the html outline */
 .nav > span {
   font-family: 'Bungee', sans-serif;
+  align-self: flex-end;
 }
