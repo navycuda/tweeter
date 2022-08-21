@@ -29,11 +29,12 @@
     <h1 class="hidden">Tweeter App</h1>
     
     <header>
-      <h2>tweeter</h2>
+      <span>tweeter</span>
       <nav>
-        <h3>
+        <h3 class="hidden">navigation</h3>
+        <span>
           <i>Write</i> a new tweet
-        </h3>
+        </span>
         <a href="#">
           <i class="fa-solid fa-angles-down"></i>
         </a>
@@ -42,42 +43,58 @@
 
 
     <main>
-      <h2 class="hidden">What are you humming about?</h2>
       
       <!-- Create a new Tweet -->
       <section>
-
-
-
-      </section>
-
-      <!-- Container for tweets -->
-
-
-
-
-    </main>
-
-
-
-    <main id="tweet-box">
-      <h2>New Tweet</h2>
-      <section class="new-tweet">
-        <form method="post" action="/tweets/">
+        <h2 class="hidden">What are you humming about?</h2>
+        
+        <form method="post" action="/tweets">
+          <h3 class="hidden">New Tweet</h3>
           <span id="validation"></span>
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <hr/>
+          <textarea
+            name="text"
+            id="tweet-text"
+            placeholder="What are you humming about"
+          ></textarea>
           <div>
             <button type="submit" id="post-new-tweet">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
-      <article>
-        <h1>Tweets</h1>
-        
-      </article>
-    </main>
 
+      <!-- Container for tweets -->
+      <section>
+        <h3 class="hidden">Read Tweets</h3>
+        <!-- Tweets container! -->
+        <div>
+          <article>
+            <h4 class="hidden">TWEET!</h4>
+            <div>
+              This is a tweet!
+            </div>
+          </article>
+
+          <article>
+            <h4 class="hidden">TWEET!!</h4>
+            <div>
+              <img src="https://i.imgur.com/nlhLi3I.png" />
+            </div>
+
+
+          </article>
+
+          <article>
+            <h4 class="hidden">TWEET!!!</h4>
+            <div>
+              This is a tweet!
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+
+    </main>
   </body>
 </html>
