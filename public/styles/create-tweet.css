@@ -1,7 +1,6 @@
 .create-tweet {
   display: flex;
   flex-direction: column;
-  align-self: center;
   width: 95%;
   margin: 0.5rem 0 0.5rem 0;
 }
