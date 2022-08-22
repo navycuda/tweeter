@@ -3,7 +3,7 @@ $(() => {
   let tweetsOnHand = 0;
   const _maxTweetLengthDoNotChange = 140;
   const $validation = $('#validation');
-  const $tweetBox = $('#tweet-box');
+  const $jumpToNew = $('#jump-to-new-tweet');
   const $readTweets = $('.read-tweets');
   const $tweetText = $('#tweet-text');
   // Make sure the waring validation is out of the way at page load
@@ -96,6 +96,11 @@ $(() => {
   $tweetText.focus(() => {
     $validation.slideUp(250);
   });
+  // If write new tweet arrows clicked, set focus
+  $jumpToNew.on('click', () => {
+    $tweetText.focus();
+  });
+
   // Post new tweet
   $('#post-new-tweet').on('click', function(event) {
     event.preventDefault();
