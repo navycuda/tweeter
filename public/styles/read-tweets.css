@@ -3,3 +3,19 @@
   flex-direction: column;
   width: 95%;
 }
+.read-tweets article {
+  background-color: yellowgreen;
+  padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+  border: 2px solid #545149;
+}
+.read-tweets article > header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.read-tweets article > header > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
