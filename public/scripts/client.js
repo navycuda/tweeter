@@ -82,7 +82,7 @@ $(() => {
 
     // Create the footer
     const $footer = $('<footer>');
-    const $dateStamp = $('<span>').text(tweet.created_at);
+    const $dateStamp = $('<span>').text(timeago.format(tweet.created_at));
     const $footerDiv = $('<div>');
     const $flag = $('<i class="fa-solid fa-flag"></i>');
     const $retweet = $('<i class="fa-solid fa-retweet"></i>');
