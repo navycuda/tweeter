@@ -4,7 +4,7 @@ $(() => {
   const _maxTweetLengthDoNotChange = 140;
   const $validation = $('#validation');
   const $tweetBox = $('#tweet-box');
-  const $fromServer = $tweetBox.find('#from-server');
+  const $readTweets = $('.read-tweets');
   const $tweetText = $('#tweet-text');
   // Make sure the waring validation is out of the way at page load
   $validation.slideUp(0);
@@ -82,6 +82,8 @@ $(() => {
 
     // Create the article
     const $article = $('<article>');
+
+
     
     // Create the header
     const $header = $('<header>');
@@ -95,7 +97,7 @@ $(() => {
     $headerDiv.append($avatar, $username);
 
     // Create the content
-    const $content = $('<p>').text(tweet.content.text);
+    const $content = $('<p>').text(escapeText(tweet.content.text));
     // add content to article
     $article.append($content);
 
@@ -106,15 +108,16 @@ $(() => {
     const $flag = $('<i class="fa-solid fa-flag"></i>');
     const $retweet = $('<i class="fa-solid fa-retweet"></i>');
     const $heart = $('<i class="fa-solid fa-heart"></i>');
-    
     // add footer to the article
-    
+    $article.append($footer);
+    $footer.append($dateStamp, $footerDiv);
+    $footerDiv.append($flag, $retweet, $heart);
 
 
     return $article;
   };
   // On pageload, grab all the tweets from the server
-  loadTweets($fromServer);
+  loadTweets($readTweets);
   // If error message displayed, focusing on the text box will eliminate it
   $tweetText.focus(() => {
     $validation.slideUp(250);
@@ -129,7 +132,7 @@ $(() => {
       $validation.text('Too long').slideDown(250);
       return;
     }
-    const $form = $tweetBox.find('form');
+    const $form = $('form');
     $.ajax({
       url: 'http://localhost:8080/tweets',
       method: 'POST',
@@ -137,7 +140,7 @@ $(() => {
     })
       .then(function() {
         console.log('load tweets');
-        loadTweets($fromServer);
+        loadTweets($readTweets);
       });
     $tweetText.val('');
     $tweetText.focus();
