@@ -4,7 +4,7 @@ $(() => {
   const _maxTweetLengthDoNotChange = 140;
   const $validation = $('#validation');
   const $jumpToNew = $('#jump-to-new-tweet');
-  const $readTweets = $('.read-tweets');
+  const $readTweets = $('.display-tweets');
   const $tweetText = $('#tweet-text');
   // Make sure the waring validation is out of the way at page load
   $validation.slideUp(0);
