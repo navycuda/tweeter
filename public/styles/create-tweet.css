@@ -25,6 +25,9 @@
   color: #FFF;
   padding: 0.1rem 0.2rem 0.1rem 0.2rem;
 }
+#post-new-tweet:hover {
+  box-shadow: 3px 3px 0 #545149;
+}
 #tweet-text {
   background: none;
   border: none;

@@ -4,10 +4,12 @@
   width: 95%;
 }
 .read-tweets article {
-  background-color: yellowgreen;
   padding: 0.25rem 0.25rem 0.25rem 0.25rem;
   border: 2px solid #545149;
   margin: 0.5rem 0 0.5rem 0;
+}
+.read-tweets article:hover {
+  box-shadow: 3px 3px 0 #545149;
 }
 .read-tweets article > header {
   display: flex;
@@ -31,5 +33,11 @@
   justify-content: space-between;
   margin: 0.25rem 0 0.5rem 0;
   padding: 0 0.5rem 0 0.5rem;
+}
+.read-tweets article > footer i {
+  color: #4056A1;
+}
+.read-tweets article > footer i:hover {
+  text-shadow: 3px 3px 0 #545149;
 }
 
