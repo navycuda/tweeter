@@ -17,7 +17,7 @@ $(() => {
   const renderTweets = (tweets, element) => {
     const $title = element.find('h3');
     // Remove the hidden title so it can be prepended to the top
-    // element.remove($title);
+    element.remove($title);
     if (tweets instanceof Array) {
       for (const tweet of tweets) {
         element.prepend(createTweetElement(tweet));
@@ -28,7 +28,7 @@ $(() => {
       }
     }
     // Prepend the hidden title.
-    // element.prepend($title);
+    element.prepend($title);
   };
   /**
    * Eliminates harmful strings, shamelessly stolen from lesson example
