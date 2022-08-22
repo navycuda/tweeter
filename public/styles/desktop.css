@@ -4,6 +4,10 @@
     align-items: flex-start;
   }
   main {
-    margin: 120px 0 0 0;
+    margin: calc(120px + 10%) 0 0 0;
+  }
+  .user-details {
+    width: 60%;
+    margin: calc(120px + 10%) 15% 0 5%;
   }
 }
