@@ -2,4 +2,3 @@ node_modules/
 .env
 .DS_Store
 public/images/backgrounds/*.png
-server/data-files/initial-tweets.json
