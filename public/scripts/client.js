@@ -15,6 +15,9 @@ $(() => {
    * @param {Object} element Dom element to attach tweet to
    */
   const renderTweets = (tweets, element) => {
+    const $title = element.find('h3');
+    // Remove the hidden title so it can be prepended to the top
+    // element.remove($title);
     if (tweets instanceof Array) {
       for (const tweet of tweets) {
         element.prepend(createTweetElement(tweet));
@@ -24,6 +27,8 @@ $(() => {
         element.prepend(createTweetElement(tweet));
       }
     }
+    // Prepend the hidden title.
+    // element.prepend($title);
   };
   /**
    * Eliminates harmful strings, shamelessly stolen from lesson example
@@ -56,34 +61,8 @@ $(() => {
    * @returns {Object} Dom element
    */
   const createTweetElement = (tweet) => {
-    // <article>
-    //   <header>
-    //     <div>
-    //       <img src="https://i.imgur.com/nlhLi3I.png" />
-    //       <h4>username</h4>
-    //     </div>
-    //     <span>@userhandle</span>
-    //   </header>
-
-    //   <p>
-    //     The users tweeter comment should go here!
-    //   </p>
-
-    //   <footer>
-    //     <span>datestamp</span>
-    //     <div>
-    //       <i class="fa-solid fa-flag"></i>
-    //       <i class="fa-solid fa-retweet"></i>
-    //       <i class="fa-solid fa-heart"></i>
-    //     </div>
-    //   </footer>
-
-    // </article>
-
     // Create the article
     const $article = $('<article>');
-
-
     
     // Create the header
     const $header = $('<header>');
@@ -112,7 +91,6 @@ $(() => {
     $article.append($footer);
     $footer.append($dateStamp, $footerDiv);
     $footerDiv.append($flag, $retweet, $heart);
-
 
     return $article;
   };
