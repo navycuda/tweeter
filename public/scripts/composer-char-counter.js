@@ -23,4 +23,8 @@ $(() => {
     const pos = _maxTweetLengthDoNotChange - tweetText.val().length;
     updateCounter(pos, counter);
   });
+  tweetText.on('focus', () => {
+    const pos = _maxTweetLengthDoNotChange - tweetText.val().length;
+    updateCounter(pos, counter);
+  });
 });
