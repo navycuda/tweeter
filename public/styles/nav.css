@@ -33,3 +33,6 @@
 .nav nav > a {
   color: red;
 }
+.nav nav > a:hover {
+  color: rgb(255, 98, 98);
+}
