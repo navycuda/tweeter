@@ -45,6 +45,5 @@ main section {
   color: #4056A1;
 }
 .read-tweets article > footer i:hover {
-  text-shadow: 3px 3px 0 #545149;
+  color: #8e9bc8;
 }
-
